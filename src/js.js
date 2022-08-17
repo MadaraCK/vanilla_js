@@ -33,20 +33,18 @@ function jumpFunction() {
 }
 
 const failed = setInterval(function () {
-    let jumpTop = parseInt(window.getComputedStyle(jump).getPropertyValue('top'))
-    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'))
-    if (blockLeft < 20 && blockLeft > 0 && jumpTop >= 459) {
-        lose.style.display = ' none'
-        ifLoser.style.display = ' flex'
-    }else if (blockLeft < 20 && blockLeft > 0 && jumpTop >= 439){
-        lose.style.display = ' none'
-        ifLoser.style.display = ' flex'
-    }else if (blockLeft < 30 && blockLeft > 0 && jumpTop >= 559){
-        lose.style.display = ' none'
-        ifLoser.style.display = ' flex'
+        let jumpTop = parseInt(window.getComputedStyle(jump).getPropertyValue('top'))
+        let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'))
+        if (blockLeft < 20 && blockLeft > 0 && jumpTop >= 459) {
+            lose.style.display = ' none'
+            ifLoser.style.display = ' flex'
+        } else if (blockLeft < 20 && blockLeft > 0 && jumpTop >= 439) {
+            lose.style.display = ' none'
+            ifLoser.style.display = ' flex'
+        }
     }
 
-}, 10)
+    , 10)
 
 // Refresh//
 
