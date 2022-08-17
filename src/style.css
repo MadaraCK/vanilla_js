@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    animation: background 4s infinite;
+}
+
+.bgc {
+    background: linear-gradient(burlywood, lightgray);
+}
+
 .main_box_game {
     position: absolute;
     width: 100vw;
@@ -11,7 +19,8 @@
     border-bottom: 2px solid black;
     box-shadow: 0 5px 16px green;
 }
-.start_game{
+
+.start_game {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,22 +33,7 @@
     border-radius: 50%;
     transition: 1s;
     animation: start 4s infinite;
-}
-@keyframes start {
-    0%{
-        scale: 1.1;
-        box-shadow: 2px 3px 13px green;
-
-    }
-    50%{
-        scale: 1.2;
-        box-shadow: 2px 3px 14px green;
-
-    }
-    100%{
-        scale: 1.1;
-        box-shadow: 2px 3px 15px green;
-    }
+    background: white;
 }
 
 
@@ -51,30 +45,13 @@
     background: darkmagenta;
     z-index: 2;
 }
-.lobby_game{
+
+.lobby_game {
     display: none;
 }
 
 .animation {
     animation: jump 1s linear;
-}
-
-@keyframes jump {
-    0% {
-        top: 459px
-    }
-    30% {
-        top: 366px
-    }
-    70% {
-        top: 366px
-    }
-    90%{
-        top: 396px
-    }
-    100% {
-        top: 459px
-    }
 }
 
 .run_block {
@@ -88,15 +65,6 @@
 
 .animation_run {
     animation: run 2s infinite linear;
-}
-
-@keyframes run {
-    0% {
-        left: 1850px
-    }
-    100% {
-        left: -40px;
-    }
 }
 
 .score {
@@ -117,28 +85,34 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background: white;
     gap: 10px;
     border: 1px solid black;
     width: 300px;
     height: 150px;
     box-shadow: inset 0 1px 15px red;
-    animation: popup 1s ;
+    animation: popup 1s 2;
 }
-.reset{
+
+.reset {
     cursor: pointer;
-    animation:   reset 1s infinite;
+    animation: reset 1s infinite;
 }
+
+
+/*////*/
 @keyframes reset {
-    0%{
+    0% {
         scale: 1.1;
     }
-    50%{
+    50% {
         scale: 1.2;
     }
-    100%{
+    100% {
         scale: 1.1;
     }
 }
+
 @keyframes popup {
     10%, 90% {
         transform: translate3d(-1px, 0, 0);
@@ -156,3 +130,105 @@
         transform: translate3d(4px, 0, 0);
     }
 }
+
+@keyframes start {
+    0% {
+        scale: 1.1;
+        box-shadow: 2px 3px 13px green;
+
+    }
+    50% {
+        scale: 1.2;
+        box-shadow: 2px 3px 14px green;
+
+    }
+    100% {
+        scale: 1.1;
+        box-shadow: 2px 3px 15px green;
+    }
+}
+
+@keyframes run {
+    0% {
+        left: 1850px
+    }
+    100% {
+        left: -40px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 459px
+    }
+    30% {
+        top: 366px
+    }
+    70% {
+        top: 366px
+    }
+    90% {
+        top: 396px
+    }
+    100% {
+        top: 459px
+    }
+}
+
+@keyframes background {
+    0% {
+        background: wheat;
+    }
+    20% {
+        background: burlywood;
+    }
+    40% {
+        background: bisque;
+    }
+    60% {
+        background: whitesmoke;
+    }
+    80% {
+        background: powderblue;
+    }
+    100% {
+        background: azure;
+    }
+}
+
+@media only screen and (max-width: 1680px) and (max-height: 1050px){
+    .jump_block {
+        top: 439px;
+    }
+
+    .run_block {
+        top: 369px;
+    }
+
+    @keyframes jump {
+        0% {
+            top: 439px
+        }
+        30% {
+            top: 346px
+        }
+        70% {
+            top: 346px
+        }
+        90% {
+            top: 366px
+        }
+        100% {
+            top: 439px
+        }
+    }
+    @keyframes run {
+        0% {
+            left: 1610px
+        }
+        100% {
+            left: -40px;
+        }
+    }
+}
+
