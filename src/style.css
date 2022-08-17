@@ -231,4 +231,39 @@ body {
         }
     }
 }
+@media only screen and (device-height: 100vh) and (device-width: 100vw){
+    .jump_block {
+        top: 539px;
+    }
+
+    .run_block {
+        top: 469px;
+    }
+
+    @keyframes jump {
+        0% {
+            top: 539px
+        }
+        30% {
+            top: 447px
+        }
+        70% {
+            top: 447px
+        }
+        90% {
+            top: 467px
+        }
+        100% {
+            top: 539px
+        }
+    }
+    @keyframes run {
+        0% {
+            left: 1610px
+        }
+        100% {
+            left: -40px;
+        }
+    }
+}
 

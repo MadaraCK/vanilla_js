@@ -6,6 +6,7 @@ const ifLoser = document.getElementById('if_loser')
 const start = document.getElementById('start')
 const lobby = document.getElementById('lobby')
 const reset = document.getElementById('reset')
+const full_screen = document.getElementById('full_screen')
 
 let counter = 0;
 
@@ -34,16 +35,48 @@ function jumpFunction() {
 const failed = setInterval(function () {
     let jumpTop = parseInt(window.getComputedStyle(jump).getPropertyValue('top'))
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'))
-    if (blockLeft < 20 && blockLeft > 0 && jumpTop >= 426) {
+    if (blockLeft < 20 && blockLeft > 0 && jumpTop >= 459) {
+        lose.style.display = ' none'
+        ifLoser.style.display = ' flex'
+    }else if (blockLeft < 20 && blockLeft > 0 && jumpTop >= 439){
+        lose.style.display = ' none'
+        ifLoser.style.display = ' flex'
+    }else if (blockLeft < 30 && blockLeft > 0 && jumpTop >= 559){
         lose.style.display = ' none'
         ifLoser.style.display = ' flex'
     }
+
 }, 10)
-    reset.addEventListener('click', function (){
-        window.location.reload(true);
 
-    })
+// Refresh//
 
+reset.addEventListener('click', function () {
+    window.location.reload(true);
+})
+
+/// full screen
+
+
+function getFullScreen() {
+    return document.fullscreenElement
+}
+
+function fullScreen() {
+    if (getFullScreen()) {
+        document.exitFullscreen()
+    } else {
+        document.getElementById('full_screen').requestFullscreen().catch(console.log)
+    }
+}
+
+document.addEventListener('dblclick', () => {
+    fullScreen()
+})
+window.addEventListener('fullscreenchange', () => {
+    console.log('fullscreen')
+})
+
+////
 jump.addEventListener('click', jumpFunction)
 jumpFunction()
 startGame()
