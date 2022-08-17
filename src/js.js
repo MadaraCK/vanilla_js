@@ -4,6 +4,8 @@ const score = document.getElementById("score")
 const lose = document.getElementById('lose')
 const ifLoser = document.getElementById('if_loser')
 const start = document.getElementById('start')
+const lobby = document.getElementById('lobby')
+const reset = document.getElementById('reset')
 
 let counter = 0;
 
@@ -11,6 +13,7 @@ function startGame() {
     start.addEventListener('click', function () {
         block.classList.add('animation_run')
         start.style.display = 'none'
+        lobby.style.display = 'block'
     })
 }
 
@@ -36,6 +39,10 @@ const failed = setInterval(function () {
         ifLoser.style.display = ' flex'
     }
 }, 10)
+    reset.addEventListener('click', function (){
+        window.location.reload(true);
+
+    })
 
 jump.addEventListener('click', jumpFunction)
 jumpFunction()

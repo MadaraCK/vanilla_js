@@ -22,12 +22,26 @@
     top: 48%;
     border: 1px solid black;
     border-radius: 50%;
-    box-shadow: 2px 3px 15px green;
     transition: 1s;
+    animation: start 4s infinite;
 }
-.start_game:hover{
-    scale: 1.1;
+@keyframes start {
+    0%{
+        scale: 1.1;
+        box-shadow: 2px 3px 13px green;
+
+    }
+    50%{
+        scale: 1.2;
+        box-shadow: 2px 3px 14px green;
+
+    }
+    100%{
+        scale: 1.1;
+        box-shadow: 2px 3px 15px green;
+    }
 }
+
 
 .jump_block {
     position: relative;
@@ -37,9 +51,12 @@
     background: darkmagenta;
     z-index: 2;
 }
+.lobby_game{
+    display: none;
+}
 
 .animation {
-    animation: jump 1s;
+    animation: jump 1s linear;
 }
 
 @keyframes jump {
@@ -51,6 +68,9 @@
     }
     70% {
         top: 366px
+    }
+    90%{
+        top: 396px
     }
     100% {
         top: 459px
@@ -95,10 +115,44 @@
 .popup {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
     border: 1px solid black;
     width: 300px;
     height: 150px;
     box-shadow: inset 0 1px 15px red;
+    animation: popup 1s ;
+}
+.reset{
+    cursor: pointer;
+    animation:   reset 1s infinite;
+}
+@keyframes reset {
+    0%{
+        scale: 1.1;
+    }
+    50%{
+        scale: 1.2;
+    }
+    100%{
+        scale: 1.1;
+    }
+}
+@keyframes popup {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
